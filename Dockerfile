@@ -1,15 +1,8 @@
 FROM golang:1.21-alpine
-
-# Set folder kerja
 WORKDIR /app
-
-# Copy seluruh kodingan (termasuk folder vendor tadi)
+# Kita pakai folder vendor yang sudah kamu buat tadi
 COPY . .
-
-# Build aplikasi menggunakan folder vendor (-mod=vendor)
-# Arahkan ke lokasi main.go kamu di cmd/api/main.go
+# Perintah build harus mengarah ke tempat main.go berada
 RUN go build -mod=vendor -o main ./cmd/api/main.go
-
 EXPOSE 8080
-
 CMD ["./main"]
