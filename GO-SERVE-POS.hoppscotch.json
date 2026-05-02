@@ -1,0 +1,524 @@
+[{
+  "v": 2,
+  "name": "GO-SERVE-POS",
+  "folders": [
+    {
+      "v": 2,
+      "name": "📦 Category",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Get All Categories",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/categories",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Get Category By ID",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/categories/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Category",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/categories",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Ayam Goreng\",\n  \"icon\": \"🍗\",\n  \"sort_order\": 1,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Category",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/categories/1",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Ayam Goreng Updated\",\n  \"icon\": \"🍗\",\n  \"sort_order\": 1,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Category",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/categories/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    },
+    {
+      "v": 2,
+      "name": "🍗 Product",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Get All Products",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/products",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Get Product By ID",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/products/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Product",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/products",
+          "headers": [{ "key": "Content-Type", "value": "multipart/form-data", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "multipart/form-data",
+            "body": [
+              { "key": "name", "value": "Ayam Geprek", "active": true, "type": "text" },
+              { "key": "description", "value": "Ayam goreng crispy disiram sambal", "active": true, "type": "text" },
+              { "key": "price", "value": "20000", "active": true, "type": "text" },
+              { "key": "stock", "value": "50", "active": true, "type": "text" },
+              { "key": "cooking_time", "value": "10", "active": true, "type": "text" },
+              { "key": "category_id", "value": "1", "active": true, "type": "text" },
+              { "key": "is_best_seller", "value": "true", "active": true, "type": "text" },
+              { "key": "is_new", "value": "false", "active": true, "type": "text" }
+            ]
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Product",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/products/1",
+          "headers": [{ "key": "Content-Type", "value": "multipart/form-data", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "multipart/form-data",
+            "body": [
+              { "key": "name", "value": "Ayam Geprek Updated", "active": true, "type": "text" },
+              { "key": "price", "value": "22000", "active": true, "type": "text" },
+              { "key": "stock", "value": "40", "active": true, "type": "text" },
+              { "key": "is_best_seller", "value": "true", "active": true, "type": "text" },
+              { "key": "is_active", "value": "true", "active": true, "type": "text" }
+            ]
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Product",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/products/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    },
+    {
+      "v": 2,
+      "name": "🧂 Variant",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Get Variants By Product",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/products/1/variants",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Variant - Sambal Ijo",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/products/1/variants",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Sambal Ijo\",\n  \"additional_price\": 0,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Variant - Sambal Matah",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/products/1/variants",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Sambal Matah\",\n  \"additional_price\": 0,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Variant - Tepung Pedes",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/products/1/variants",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Tepung Pedes\",\n  \"additional_price\": 2000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Variant",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/variants/1",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Sambal Ijo Updated\",\n  \"additional_price\": 1000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Variant",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/variants/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    },
+    {
+      "v": 2,
+      "name": "➕ Addon",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Get All Addons",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/addons",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Addon - Extra Nasi",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/addons",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Extra Nasi\",\n  \"price\": 5000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Addon - Extra Sambal",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/addons",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Extra Sambal\",\n  \"price\": 2000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Addon - Extra Keju",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/addons",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Extra Keju\",\n  \"price\": 5000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Addon",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/addons/1",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Extra Nasi Updated\",\n  \"price\": 6000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Addon",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/addons/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Assign Addon to Product",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/products/1/addons/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Remove Addon from Product",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/products/1/addons/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    },
+    {
+      "v": 2,
+      "name": "🍱 Combo",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Get All Combos",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/combos",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Get Combo By ID",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/combos/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Combo",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/combos",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Paket Hemat A\",\n  \"description\": \"1 Ayam + 1 Nasi + 1 Minuman\",\n  \"base_price\": 35000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Combo",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/combos/1",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Paket Hemat A Updated\",\n  \"base_price\": 38000,\n  \"is_active\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Combo",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/combos/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Combo Slot - Pilih Ayam",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/combos/1/slots",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"slot_name\": \"Pilih Ayam\",\n  \"is_required\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Combo Slot - Pilih Minuman",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/combos/1/slots",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"slot_name\": \"Pilih Minuman\",\n  \"is_required\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Update Combo Slot",
+          "method": "PUT",
+          "endpoint": "http://localhost:3000/api/v1/slots/1",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"slot_name\": \"Pilih Ayam Updated\",\n  \"is_required\": true\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Combo Slot",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/slots/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Create Slot Option",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/slots/1/options",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"product_id\": 1,\n  \"additional_price\": 0\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Delete Slot Option",
+          "method": "DELETE",
+          "endpoint": "http://localhost:3000/api/v1/options/1",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    },
+    {
+      "v": 2,
+      "name": "🧾 Order",
+      "folders": [],
+      "requests": [
+        {
+          "v": 2,
+          "name": "Create Order - Dine In",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/orders",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"table_number\": \"Meja 01\",\n  \"order_type\": \"Dine In\",\n  \"total_amount\": 45000,\n  \"items\": [\n    {\n      \"product_id\": 1,\n      \"variant_id\": 1,\n      \"quantity\": 2,\n      \"price\": 20000,\n      \"subtotal\": 40000,\n      \"spicy_level\": 5,\n      \"notes\": \"Sambalnya dipisah\"\n    }\n  ]\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Create Order - Take Away",
+          "method": "POST",
+          "endpoint": "http://localhost:3000/api/v1/orders",
+          "headers": [{ "key": "Content-Type", "value": "application/json", "active": true }],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"table_number\": \"-\",\n  \"order_type\": \"Take Away\",\n  \"total_amount\": 20000,\n  \"items\": [\n    {\n      \"product_id\": 1,\n      \"quantity\": 1,\n      \"price\": 20000,\n      \"subtotal\": 20000,\n      \"notes\": \"\"\n    }\n  ]\n}"
+          }
+        },
+        {
+          "v": 2,
+          "name": "Get Active Orders (KDS)",
+          "method": "GET",
+          "endpoint": "http://localhost:3000/api/v1/kds/active",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Accept Order - Koki Terima",
+          "method": "PATCH",
+          "endpoint": "http://localhost:3000/api/v1/orders/1/accept",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        },
+        {
+          "v": 2,
+          "name": "Finish Order - Koki Selesai",
+          "method": "PATCH",
+          "endpoint": "http://localhost:3000/api/v1/orders/1/finish",
+          "headers": [],
+          "params": [],
+          "auth": { "authType": "none", "authActive": false },
+          "body": { "contentType": null, "body": null }
+        }
+      ]
+    }
+  ],
+  "requests": []
+}]
