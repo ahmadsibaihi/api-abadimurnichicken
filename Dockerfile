@@ -1,25 +1,22 @@
-# 1. Gunakan image Golang versi terbaru yang ringan
+# Pakai versi Go yang sesuai (di gambar kamu pakai 1.21+)
 FROM golang:1.21-alpine
 
-# 2. Tentukan folder kerja di dalam server
+# Install git karena library kamu (fiber, gorm) butuh ini buat download
+RUN apk add --no-cache git
+
 WORKDIR /app
 
-# 3. Copy file library (dependency)
-COPY go.mod ./
-# Jika kamu punya go.sum, aktifkan baris di bawah ini (hapus tanda #)
-# COPY go.sum ./
-
-# 4. Download library yang dibutuhkan
+# Copy dependency
+COPY go.mod go.sum ./
 RUN go mod download
 
-# 5. Copy seluruh sisa kodingan kamu
+# Copy semua file kodingan
 COPY . .
 
-# 6. Build aplikasi kamu jadi file bernama 'main'
-RUN go build -o main .
+# --- BAGIAN PENTING ---
+# Kita arahkan build ke folder cmd/api/main.go sesuai gambar kamu
+RUN go build -o main ./cmd/api/main.go
 
-# 7. Beritahu Docker port mana yang dibuka (sesuaikan port Go kamu)
 EXPOSE 8080
 
-# 8. Jalankan aplikasinya
 CMD ["./main"]

@@ -6,5 +6,8 @@ services:
       - "8080:8080"
     restart: always
     environment:
-      DB_HOST: mysql_container
-      DB_PASSWORD: password_rahasia_kamu
+      - DB_HOST=mysql_container
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=amc-gobackend
+      - DB_NAME=db_pos-kds
