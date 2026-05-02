@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      DB_HOST: mysql_container
+      DB_PASSWORD: password_rahasia_kamu
