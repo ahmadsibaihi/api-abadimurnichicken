@@ -5,7 +5,7 @@ services:
     build: .
     container_name: be-abadimurnichicken
     ports:
-      - "8080:8080"
+      - "8080:3000"
     restart: always
     environment:
       - DB_HOST=mysql_container
