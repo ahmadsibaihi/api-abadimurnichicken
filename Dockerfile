@@ -6,7 +6,9 @@ RUN apk add --no-cache git ca-certificates
 
 COPY go.mod go.sum ./
 
-RUN go env -w GOPROXY=https://proxy.golang.org,direct
+ENV GOPROXY=https://proxy.golang.org,direct
+ENV GOSUMDB=sum.golang.org
+
 RUN go mod download
 
 COPY . .
