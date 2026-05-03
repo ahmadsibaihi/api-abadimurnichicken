@@ -1,8 +1,20 @@
-FROM golang:1.21-alpine
+FROM golang:1.21-alpine AS builder
+
 WORKDIR /app
-# Kita pakai folder vendor yang sudah kamu buat tadi
+
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY . .
-# Perintah build harus mengarah ke tempat main.go berada
-RUN go build -mod=vendor -o main ./cmd/api/main.go
+
+RUN go build -o main ./cmd/api/main.go
+
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY --from=builder /app/main .
+
 EXPOSE 8080
+
 CMD ["./main"]
