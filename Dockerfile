@@ -2,18 +2,9 @@ FROM golang:1.21-alpine AS builder
 
 WORKDIR /app
 
-RUN apk add --no-cache git ca-certificates
-
-COPY go.mod go.sum ./
-
-ENV GOPROXY=https://proxy.golang.org,direct
-ENV GOSUMDB=sum.golang.org
-
-RUN go mod download
-
 COPY . .
 
-RUN go build -o main ./cmd/api/main.go
+RUN go build -mod=vendor -o main ./cmd/api/main.go
 
 FROM alpine:latest
 
